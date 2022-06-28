@@ -17,7 +17,7 @@ function Home(){
 
 return(
   <div className="bg-bodybackground">
-    <About/>
+    <About updateDrinks={setDrinkData}/>
     <Cards Drinks={drinkData}/>
   </div>
 )

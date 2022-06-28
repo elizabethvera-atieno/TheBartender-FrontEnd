@@ -5,12 +5,12 @@ function Cards({Drinks}){
 
 
   return(
-    <div className="text-center">
-    <h3 className="text-2xl  pt-5 text-textcolor font-bold">
-        Some of the popular Cocktails
+    <div className=" cards text-center">
+    <h3 className="text-2xl  pt-4 text-textcolor font-bold">
+    Experience a blast of flavours
     </h3>
     <section className="overflow-hidden text-gray-700 ">
-        <div className="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
+        <div className="container px-5 py-2 mx-auto lg:pt-5 lg:px-32">
             <div className="flex flex-col md:flex-row place-content-center flex-wrap -m-1 md:-m-2">
               {Drinks.map((drink)=>(
                    <div key={drink.idDrink} className="flex flex-wrap w-1/3">
