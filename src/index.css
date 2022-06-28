@@ -19,9 +19,25 @@ code {
 .navbar{
   height: 9vh;
   background-color: rgba(77, 24, 24, 0.4);
-  font-family: 'Lobster Two', cursive;
+  /* font-family: 'Lobster Two', cursive; */
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 .app{
   min-height: 100vh;
+}
+
+.about{
+  background-image: url('./Images/cocktaillandingpage.jpeg');
+  min-height: 60vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+  /* font-family: 'Lobster Two', cursive; */
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.heading{
+  font-family: 'Lobster Two', cursive;
 }
