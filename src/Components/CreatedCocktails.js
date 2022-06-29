@@ -16,27 +16,27 @@ function CreatedCocktails() {
     {drinkData.map((drink) => (
       <div key={drink.id} className="flex">
       <div className="container mx-auto pt-7">
-      <h2 className="font-bold text-textcolor">{drink.name}</h2>
+      <h2 className="font-bold text-[#07074D]">{drink.name}</h2>
       <div className="flex">
         <div>
           <img
-            src="https://www.thecocktaildb.com/images/media/drink/l3cd7f1504818306.jpg"
+            src={drink.image}
             alt="name"
-            width={300}
-            height={300}
+            width={250}
+            height={250}
             objectfit="cover"
           />
         </div>
-        <div className="pl-5 text-textcolor font-bold">
-          <p>Cocktail Name: </p>
-          <p className="pt-2">Category: </p>
-          <p className="pt-2">Type of glass: </p>
-          <p className="pt-2">Ing1:</p>
-          <p className="pt-2">Ing2:</p>
-          <p className="pt-2">Ing3:</p>
-          <p className="pt-2 pb-10">Ing4:</p>
+        <div className="pl-5 text-[#07074D] font-bold">
+          <p>Cocktail Name: <span className="text-white">{drink.name}</span></p>
+          <p className="pt-2">Category: <span className="text-white">{drink.alcohol}</span></p>
+          <p className="pt-2">Type of glass: <span className="text-white">{drink.glass} </span></p>
+          <p className="pt-2">Ing1: <span className="text-white">{drink.ingredients.map((ing) => (ing.ing1))}</span></p>
+          <p className="pt-2">Ing2: <span className="text-white">{drink.ingredients.map((ing) => (ing.ing2))}</span></p>
+          <p className="pt-2">Ing3: <span className="text-white">{drink.ingredients.map((ing) => (ing.ing3))}</span></p>
+          <p className="pt-2 pb-1">Ing4: <span className="text-white">{drink.ingredients.map((ing) => (ing.ing4))}</span></p>
           <button
-              className="hover:shadow-form rounded-md bg-red-200 py-3 px-8 text-base font-semibold text-[#07074D] outline-none">
+              className="hover:shadow-form rounded-md bg-red-200 py-1 px-5 text-base font-semibold text-[#07074D] outline-none">
               Delete
           </button>
         </div>
