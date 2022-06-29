@@ -12,7 +12,10 @@ function Navbar(){
           <a href="/">Home</a>
         </h2>
         <h2 className=" md:text-md pl-4 pt-3 text-textcolor">
-          <a href="/makeyours">Make A Drink</a>
+          <a href="/makeyours">Create a recipe</a>
+        </h2>
+        <h2 className=" md:text-md pl-4 pt-3 text-textcolor">
+          <a href="/createdcocktails">New Recipes</a>
         </h2>
         <h2 className=" md:text-md pl-4 pt-3 text-textcolor">
           <a href="/login">Login</a>

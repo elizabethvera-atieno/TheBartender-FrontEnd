@@ -14,6 +14,7 @@ function Home(){
       .then((r) => r.json())
       .then((data) => setDrinkData(data.drinks));
   }, []);
+  console.log(drinkData)
 
 return(
   <div className="bg-bodybackground">
