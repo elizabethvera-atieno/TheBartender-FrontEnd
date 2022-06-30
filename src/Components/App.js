@@ -10,25 +10,28 @@ import Signup from './Signup';
 import {useState} from "react"
 
 function App() {
+  const [user, setUser] = useState(null)
+
+
   return (
     <>
-      <Navbar/>
+      <Navbar user={user}/>
       <div className='app'>
         <Switch>
           <Route path={'/display'}>
             <Display/>
           </Route>
           <Route path={'/makeyours'}>
-            <Makecocktail/>
+            <Makecocktail user={user} setUser={setUser}/>
           </Route>
           <Route path={'/login'}>
-            <Login/>
+            <Login user={user} setUser={setUser}/>
           </Route>
           <Route path={'/signup'}>
-            <Signup/>
+            <Signup user={user} setUser={setUser}/>
           </Route>
           <Route path={'/createdcocktails'}>
-            <CreatedCocktails/>
+            <CreatedCocktails user={user} setUser={setUser}/>
           </Route>
           <Route exact path={'/'}>
             <Home/>
