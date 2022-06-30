@@ -1,13 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
+import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut} from "firebase/auth";
+import {auth} from "./firebase-config";
+import {Redirect} from "react-router-dom"
 
-function Signup() {
+function Signup({user, setUser}) {
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+
+  useEffect(()=>{
+    onAuthStateChanged(auth,(currentUser) =>{
+      console.log(currentUser)
+      setUser(currentUser)
+    })
+  },[setUser])
+
+  const handleRegisterSubmit=async(event)=>{
+    event.preventDefault()
+      try{
+        const user = await createUserWithEmailAndPassword(auth,registerEmail, registerPassword)
+        console.log(user)
+      } catch (error) {
+        console.log(error.message)
+      }
+  
+  }
+
+  if (user){
+    return <Redirect to="/makeyours"/>
+  }
+
   return (
     <>
       {/* <p className="text-white text-center">Current user:</p> */}
       {/* <p className="text-white text-center">{user?.email} </p> */}
       <div className="pt-10 flex place-content-center justfify-center">
         <div className="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleRegisterSubmit}>
             <h5 className="text-xl font-medium text-gray-900 dark:text-white">
               Sign up to create an account
             </h5>
@@ -24,6 +53,7 @@ function Signup() {
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                 placeholder="name@company.com"
                 required
+                onChange={(event)=>{setRegisterEmail(event.target.value)}}
               />
             </div>
             <div>
@@ -39,6 +69,7 @@ function Signup() {
                 placeholder="••••••••"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                 required
+                onChange={(event)=>{setRegisterPassword(event.target.value)}}
               />
             </div>
             <div className="flex items-start">
