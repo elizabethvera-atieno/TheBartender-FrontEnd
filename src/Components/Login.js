@@ -1,14 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut} from "firebase/auth";
+import {auth} from "./firebase-config";
+import {Redirect} from "react-router-dom"
 
-function Login() {
+function Login({user, setUser}) {
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+
+  useEffect(()=>{
+    onAuthStateChanged(auth,(currentUser) =>{
+      console.log(currentUser)
+      setUser(currentUser)
+    })
+  },[setUser])
+
+  const handleLoginSubmit=async(event)=>{
+    event.preventDefault()
+      try{
+        const user = await signInWithEmailAndPassword(auth,loginEmail, loginPassword)
+        console.log(user)
+      } catch (error) {
+        console.log(error.message)
+      }
+  }
+
+  if (user){
+    return <Redirect to="/makeyours"/>
+  }
+
   return (
     <>
       {/* <p className="text-white text-center">Current user:</p> */}
       {/* <p className="text-white text-center">{user?.email} </p> */}
       <div className="pt-10 flex place-content-center justfify-center">
         <div className="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleLoginSubmit}>
             <h5 className="text-xl font-medium text-gray-900 dark:text-white">
               Login to our platform
             </h5>
@@ -25,6 +53,7 @@ function Login() {
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                 placeholder="name@company.com"
                 required
+                onChange={(event)=>{setLoginEmail(event.target.value)}}
               />
             </div>
             <div>
@@ -40,6 +69,7 @@ function Login() {
                 placeholder="••••••••"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                 required
+                onChange={(event)=>{setLoginPassword(event.target.value)}}
               />
             </div>
             <div className="flex items-start"></div>
