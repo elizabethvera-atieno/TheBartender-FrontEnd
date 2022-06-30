@@ -16,25 +16,25 @@ function Navbar({ user }) {
 
   return (
     <nav className="navbar md:flex justify-between px-5 border-gray-200 px-2 sm:px-4  rounded">
-      <h2 className="md:text-lg pl-6 pt-0 text-textcolor">
+      <h2 className="md:text-lg pl-6 pt-0 text-textcolor hover:text-blue-500">
         <a href="/">The Bartender</a>
       </h2>
       <div className="flex md:justify-end  w-full  " id="mobile-menu">
-        <h2 className=" md:text-md pl-6 pt-3 text-textcolor">
+        <h2 className=" md:text-md pl-6 pt-3 text-textcolor hover:text-blue-500">
           <a href="/">Home</a>
         </h2>
-        <h2 className=" md:text-md pl-4 pt-3 text-textcolor">
+        <h2 className=" md:text-md pl-4 pt-3 text-textcolor hover:text-blue-500">
           <a href="/makeyours">Create a recipe</a>
         </h2>
-        <h2 className=" md:text-md pl-4 pt-3 text-textcolor">
+        <h2 className=" md:text-md pl-4 pt-3 text-textcolor hover:text-blue-500">
           <a href="/createdcocktails">New Recipes</a>
         </h2>
         {!user ? (
-          <h2 className=" md:text-md pl-4 pt-3 text-textcolor">
+          <h2 className=" md:text-md pl-4 pt-3 text-textcolor hover:text-blue-500">
             <a href="/login">Login</a>
           </h2>
         ) : (
-          <h2 className=" md:text-md pl-4 pt-3 text-textcolor" onClick={logout}>
+          <h2 className=" md:text-md pl-4 pt-3 text-textcolor hover:text-blue-500" onClick={logout}>
             Sign out
           </h2>
         )}
