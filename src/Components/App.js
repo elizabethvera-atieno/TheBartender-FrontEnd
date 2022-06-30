@@ -6,6 +6,8 @@ import Makecocktail from './MakeCocktail';
 import Display from './Display';
 import Login from './Login';
 import CreatedCocktails from './CreatedCocktails';
+import Signup from './Signup';
+import {useState} from "react"
 
 function App() {
   return (
@@ -21,6 +23,9 @@ function App() {
           </Route>
           <Route path={'/login'}>
             <Login/>
+          </Route>
+          <Route path={'/signup'}>
+            <Signup/>
           </Route>
           <Route path={'/createdcocktails'}>
             <CreatedCocktails/>

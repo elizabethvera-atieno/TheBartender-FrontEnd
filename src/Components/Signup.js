@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-function Login() {
+function Signup() {
   return (
     <>
       {/* <p className="text-white text-center">Current user:</p> */}
@@ -10,7 +9,7 @@ function Login() {
         <div className="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
           <form className="space-y-6">
             <h5 className="text-xl font-medium text-gray-900 dark:text-white">
-              Login to our platform
+              Sign up to create an account
             </h5>
             <div>
               <label
@@ -42,28 +41,22 @@ function Login() {
                 required
               />
             </div>
-            <div className="flex items-start"></div>
+            <div className="flex items-start">
+              <div className="flex items-start">
+                <div className="flex items-center h-5"></div>
+              </div>
+            </div>
             <button
               type="submit"
               className="w-full text-white bg-bodybackground hover:bg-textcolor focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              Login to your account
+              Sign up
             </button>
           </form>
-          <div className="flex items-center h-5 py-10">
-            <p className="pt-10 font-medium ">
-              Don't have an account?{" "}
-              <Link to={"/signup"}>
-                <span className="text-blue-800 hover:text-bodybackground">
-                  Sign Up
-                </span>
-              </Link>
-            </p>
-          </div>
         </div>
       </div>
     </>
   );
 }
 
-export default Login;
+export default Signup;

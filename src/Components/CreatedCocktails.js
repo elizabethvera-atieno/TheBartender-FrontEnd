@@ -11,6 +11,16 @@ function CreatedCocktails() {
       .then((data) => (setDrinkData(data)))
   }, [])
   console.log(drinkData)
+
+  function handleDelete(id){
+
+    fetch(`https://dry-harbor-82835.herokuapp.com/cocktails/${id}`,{
+      method: 'DELETE'
+    })
+    const remainingDrinks = drinkData.filter(drink => drink.id !== id)
+    setDrinkData(remainingDrinks)
+    console.log(remainingDrinks)
+  }
   return (
     <>
     {drinkData.map((drink) => (
@@ -36,6 +46,7 @@ function CreatedCocktails() {
           <p className="pt-2">Ing3: <span className="text-white">{drink.ingredients.map((ing) => (ing.ing3))}</span></p>
           <p className="pt-2 pb-1">Ing4: <span className="text-white">{drink.ingredients.map((ing) => (ing.ing4))}</span></p>
           <button
+              onClick={()=>handleDelete(drink.id)}
               className="hover:shadow-form rounded-md bg-red-200 py-1 px-5 text-base font-semibold text-[#07074D] outline-none">
               Delete
           </button>
