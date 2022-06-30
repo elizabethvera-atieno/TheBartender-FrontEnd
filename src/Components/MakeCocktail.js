@@ -250,7 +250,7 @@ function Makecocktail({ user, setUser }){
           </div>
           <button
               type="submit"
-              className="hover:shadow-form rounded-md bg-red-200 py-3 px-8 text-base font-semibold text-[#07074D] outline-none">
+              className="hover:bg-red-400 rounded-md bg-red-200 py-3 px-8 text-base font-semibold text-[#07074D] outline-none">
               Add Cocktail
           </button>
         </form>

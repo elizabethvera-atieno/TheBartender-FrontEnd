@@ -20,7 +20,7 @@ function About({updateDrinks}){
 
   return (
     <div className="about text-center">
-      <h3 className="heading  md:text-2xl pt-20 text-white font-bold">THE BARTENDER<br></br>
+      <h3 className="heading  md:text-2xl pt-10 text-white font-bold">THE BARTENDER<br></br> <br></br>
       Taste of Heaven and a little bit of hell</h3>
       <h4 className="text-white md:text-xl font-bold pt-8">Search for cocktail by name</h4>
       <div className="text-center font-bold">

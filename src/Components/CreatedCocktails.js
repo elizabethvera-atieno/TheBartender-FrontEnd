@@ -48,7 +48,7 @@ function CreatedCocktails() {
           <p className="pt-2 pb-1">Ing4: <span className="text-white">{drink.ingredients.map((ing) => (ing.ing4))}</span></p>
           <button
               onClick={()=>handleDelete(drink.id)}
-              className="hover:shadow-form rounded-md bg-red-200 py-1 px-5 text-base font-semibold text-[#07074D] outline-none">
+              className="hover:bg-red-400 rounded-md bg-red-200 py-1 px-5 text-base font-semibold text-[#07074D] outline-none">
               Delete
           </button>
         </div>
