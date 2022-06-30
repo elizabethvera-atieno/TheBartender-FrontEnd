@@ -8,6 +8,7 @@ import Login from './Login';
 import CreatedCocktails from './CreatedCocktails';
 import Signup from './Signup';
 import {useState} from "react"
+import Footer from './Footer';
 
 function App() {
   const [user, setUser] = useState(null)

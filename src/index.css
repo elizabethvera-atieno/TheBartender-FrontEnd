@@ -46,3 +46,7 @@ code {
 .cards{
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
+.footer{
+  background-color: rgba(77, 24, 24, 0.4);
+  height: 5vh;
+}
