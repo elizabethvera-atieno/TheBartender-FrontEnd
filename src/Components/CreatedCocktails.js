@@ -21,6 +21,7 @@ function CreatedCocktails() {
     setDrinkData(remainingDrinks)
     console.log(remainingDrinks)
   }
+  console.log(drinkData)
   return (
     <>
     {drinkData.map((drink) => (

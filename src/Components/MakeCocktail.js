@@ -12,7 +12,7 @@ import { auth } from "./firebase-config";
 
 
 function Makecocktail({ user, setUser }){
-  const[newCocktail, setNewCocktail] = useState(null)
+  const[fetcheddata, setFetchedData] = useState(false)
   const[cocktailId, setCocktailId] = useState(0)
   const[cocktailData, setCocktailData] = useState({
     name : "",
@@ -28,7 +28,6 @@ function Makecocktail({ user, setUser }){
     ing4 : "",
     cocktail_id : cocktailId
   })
-  let history = useHistory();
 
   function submitHandler(e){
     e.preventDefault()
@@ -40,25 +39,31 @@ function Makecocktail({ user, setUser }){
       body: JSON.stringify(cocktailData)
     })
     .then((r) => r.json())
-    .then((newCocktail) => setNewCocktail(newCocktail));
+    .then((newCocktail) => {
+      // setNewCocktail(newCocktail)
+      // setCocktailId(cocktailData.id)
+      ingredients(newCocktail.id)
+    });
 
     console.log(cocktailData)
+  }
 
-    if (newCocktail){
-      fetch('https://dry-harbor-82835.herokuapp.com/ingredients',{
-        method : 'POST',
-        headers : {
-          "Content-Type" : "application/json"
-        },
-        body: JSON.stringify({
-          ...ingData,
-          cocktail_id : newCocktail.id
-        })
+  function ingredients(id){
+    fetch('https://dry-harbor-82835.herokuapp.com/ingredients',{
+      method : 'POST',
+      headers : {
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify({
+        ...ingData,
+        cocktail_id: id
       })
-      .then((r) => r.json())
-      .then((data) => console.log(data))
-    }
-    <Redirect to='/createdcocktails'/>
+    })
+    .then((r) => r.json())
+    .then((data) =>{
+      console.log(data)
+      setFetchedData(true)
+    })
   }
 
   useEffect(() => {
@@ -72,6 +77,10 @@ function Makecocktail({ user, setUser }){
 
   if (!user) {
     return <Redirect to="/login" />;
+  }
+
+  if (fetcheddata){
+    return <Redirect to="/createdcocktails"/>
   }
 
   return(
@@ -239,13 +248,11 @@ function Makecocktail({ user, setUser }){
               className="w-full rounded-md border border-formcolor bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-categories focus:shadow-md"
             />
           </div>
-          {/* <Link to={'/createdcocktails'}> */}
           <button
               type="submit"
               className="hover:shadow-form rounded-md bg-red-200 py-3 px-8 text-base font-semibold text-[#07074D] outline-none">
               Add Cocktail
           </button>
-          {/* </Link> */}
         </form>
       </div>
     </div>
