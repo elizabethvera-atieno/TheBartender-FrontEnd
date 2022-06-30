@@ -1,8 +1,17 @@
 import React from "react";
 import { useState } from "react";
-import {Redirect} from "react-router-dom"
+import {useEffect} from "react";
+import { Redirect, useHistory } from "react-router-dom";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
+import { auth } from "./firebase-config";
 
-function Makecocktail(){
+
+function Makecocktail({ user, setUser }){
   const[newCocktail, setNewCocktail] = useState(null)
   const[cocktailId, setCocktailId] = useState(0)
   const[cocktailData, setCocktailData] = useState({
@@ -19,6 +28,7 @@ function Makecocktail(){
     ing4 : "",
     cocktail_id : cocktailId
   })
+  let history = useHistory();
 
   function submitHandler(e){
     e.preventDefault()
@@ -49,6 +59,19 @@ function Makecocktail(){
       .then((data) => console.log(data))
     }
     <Redirect to='/createdcocktails'/>
+  }
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => {
+      console.log(currentUser);
+      setUser(currentUser);
+    });
+  }, [setUser]);
+
+  console.log(user);
+
+  if (!user) {
+    return <Redirect to="/login" />;
   }
 
   return(
