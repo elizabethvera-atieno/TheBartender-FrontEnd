@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# THE BARTENDER
+#### By Elizabeth Vera Atieno
+### It is a webapp that provides cocktail ingredients and methods and allow users to come up with their own mew cocktails.
+## Table of Content
+ + [Description](#description)
+ + [Project Setup](#Projectsetup)
+ + [Technology Used](#technology-used)
+ + [Dependecies](#Dependencies)
+ + [BDD](#BDD)
+ + [Authors Info](#author-Info)
+## Description
+ <p>This is a webapp that provides a veriety of cocktails and the ingredients of preparing the cocktails. It also provides instructions on making the cocktail, whether it is alocoholic or not and the kind of glass it is served in. It also allow users to come up with new, cocktails and ingredients of the cocktail and delete it at will. One can also view what others have come up with.</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Setup
+### Requirements
+ * Either a computer,phone,tablet or an Ipad
+ * An access to the Internet
+### Setup instructions
+ * Open Terminal (Ctrl + Alt + T)
+ * git clone ``` https://github.com/elizabethvera-atieno/TheBartender-FrontEnd.git```    
+ * Change Directory to TheBartender-FrontEnd  (cd TheBartender-FrontEnd )  
+ * code . (or) atom . (depending on the editor )
+## Technology Used
+ * HTML 
+ * CSS 
+ * JavaScript 
+ * React
+ * Taillwind
+## Dependencies
+ * API
+ * FireBase
+## BDD
+ The user should:
+                                      
+ * Search Cocktail by name or just eneter a keyword or letter to get cocktails with that letter or word. 
+ * scroll through the cocktail outputs to get the specific one
+ * click the image in the cocktail card of choice to see its ingredients and instructions  
+ * View what other people have come up with 
+ * Create an account or login if they already have an account  in order to be able to come up with their own new cocktails.
 
-## Available Scripts
+ ## License
+ MIT License
+## Live link
+* The Bartender - [The Bartender](https://the-bartender-front-end.vercel.app/createdcocktails)
 
-In the project directory, you can run:
+## Backend Github Link
+* [Backend github link](https://github.com/elizabethvera-atieno/phase-3-sinatra-react-project.git)
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Authors Info)
+ * Github - [elizabethvera-atieno](https://github.com/elizabethvera-atieno)
+* LinkedIn - [Lizvera Atieno](https://www.linkedin.com/in/lizvera-atieno-1590b322b/)
